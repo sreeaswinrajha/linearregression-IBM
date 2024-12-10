@@ -1,5 +1,5 @@
 CREATE-A-LINEAR-REGRESSION-MODEL-TO-PREDICT-EMPLOYEE-SALARIES
-PMA
+
 
 Import and examine the data 
 STEP1: From the Sources palette, add a Var. File node to a blank stream canvas, edit the node, point to employee_data.txt, and then close the Var. File dialog box.
