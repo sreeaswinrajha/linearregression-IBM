@@ -1,27 +1,81 @@
-CREATE-A-LINEAR-REGRESSION-MODEL-TO-PREDICT-EMPLOYEE-SALARIES
+# 📊 Predicting Employee Salaries with Linear Regression
 
+This project demonstrates how to build a **Linear Regression Model** to predict employee salaries using IBM SPSS Modeler (or similar tools). The dataset contains details of 474 employees.
 
-Import and examine the data 
-STEP1: From the Sources palette, add a Var. File node to a blank stream canvas, edit the node, point to employee_data.txt, and then close the Var. File dialog box.
-STEP2: From the Output palette, add a Table node downstream from the Var. File node, run it, and then examine the output. The dataset is comprised of 474 employees. Close the Table output window. 
-STEP 3: From the Output palette, add a Data Audit node downstream from the Var. File node, run it, and then examine the output.
-Set measurement levels and roles: 
-STEP 1: From Field Ops, add a Type node downstream from the Var. File node.
-STEP 2: Edit the Type node. Click Read Values
-STEP 3: set the Measurement for educational_level to Ordinal 
-STEP 4: The Role from gender to months_previous_experience is set to Input 
-STEP 5: set the Role for current_salary to Target
+---
 
-CREATE A LINEAR REGRESSION MODEL TO PREDICT EMPLOYEE SALARIES Create Linear Regression Model:
-STEP 1: From the Modeling palette, add a Linear node downstream from the Type node.
-STEP 2: Edit the Linear node. Click the Build Options tab
-STEP 3: click the Basics item and clear the Automatically prepare data check box 
-STEP 4: click the Model Selection item and set the Model Selection method to Include all predictors 
-STEP 5: click Run 
-STEP 6: Edit the generated model nugget, and then click the Model Summary item in the pane on the left. 
-STEP 7: Click the Predictor Importance item in the pane on the left.
-STEP 8: The job_category field is by far the most important predictor. Gender is the second most important field. Region and age are least important. 
-STEP 9: Click the Predicted by Observed item in the pane on the left.
-STEP 10: The points are not scattered around the diagonal and the predicted values seem to break up in two categories.
-STEP 11: Click the Coefficients by Observed item in the pane on the left, and then, from the Style list, select Table.
+## 📁 1. Import and Examine the Data
+
+### 🔹 Step 1: Load the Data
+- From **Sources palette**, drag a `Var. File` node to a blank canvas.
+- Edit the node, locate and select `employee_data.txt`.
+- Click **OK** to confirm.
+
+### 🔹 Step 2: Preview the Table
+- From **Output palette**, connect a `Table` node to the `Var. File` node.
+- Run the node to preview data.
+- ➤ Dataset contains **474 employees**.
+
+### 🔹 Step 3: Run Data Audit
+- Connect a `Data Audit` node to the same source.
+- Run it to inspect value distributions, types, and missing data.
+
+---
+
+## 🧪 2. Set Field Measurement Levels and Roles
+
+### 🔸 Step 1: Add and Configure Type Node
+- Add a `Type` node from **Field Ops**, connected to the `Var. File` node.
+- Click **Read Values**.
+
+### 🔸 Step 2: Configure Fields
+- Set `educational_level` → **Ordinal**
+- Set fields from `gender` to `months_previous_experience` → **Input**
+- Set `current_salary` → **Target**
+
+---
+
+## 📈 3. Create and Train Linear Regression Model
+
+### 🔹 Step 1: Add Linear Model
+- Add a `Linear` node from the **Modeling palette** connected to the `Type` node.
+
+### 🔹 Step 2: Edit Build Options
+- Go to **Build Options** tab:
+  - Under **Basics**: Uncheck `Automatically prepare data`.
+  - Under **Model Selection**: Choose `Include all predictors`.
+
+### 🔹 Step 3: Train the Model
+- Click **Run** to build the model.
+
+---
+
+## 📊 4. Evaluate the Model
+
+### 🔸 View Model Summary
+- Edit the model nugget and click **Model Summary**.
+
+### 🔸 View Predictor Importance
+- Click **Predictor Importance**
+  - `job_category` → Most important predictor
+  - `gender` → Second most important
+  - `region` and `age` → Least important
+
+### 🔸 Visualize Predictions
+- Click **Predicted by Observed**
+  - ➤ Predicted values show two major clusters rather than a smooth trend.
+
+### 🔸 View Coefficients
+- Click **Coefficients by Observed**
+- From the **Style** dropdown, select `Table`.
+
+---
+
+## ✅ Summary
+
+You now have a working linear regression model that:
+- Uses job role, education, experience, and other features
+- Identifies job category and gender as major salary predictors
+- Can be used to further explore wage inequality or HR planning
+
 
